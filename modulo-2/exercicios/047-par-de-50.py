@@ -1,0 +1,8 @@
+# FAZER UM CÓDIGO QUE MOSTRE SÓ OS NÚMEROS PARES DE 50 A 0
+
+for c in range(2, 51, 2):# RANGE(0=A, 51=B, 2=D)
+    print(c ,' ', end='')
+
+# A É ONDE IRÁ COMEÇAR
+# B É ATÉ ONDE VAI CONTAR ( MAS NÃO VAI MOSTRAR O ÚLTIMO NÚMERO )
+# C É QUANTAS CASA VAI PULAR
