@@ -3,7 +3,9 @@
 # OS ÚLTIMOS 4 COLOCADOS 
 # UMAS LISTA COM OS TIMES EM ALFABÉTICA
 # EM QUE POSIÇÃO ENTÁ O TIME DA CHAPECOENSE
+
 times = 'Internacional', 'Flamengo','Atlético-MG','São Paulo','Fluminense','Grêmio', 'Palmeiras', 'Santos','Corinthians','Bragantino', 'Athletico-PR', 'Ceará', 'Atlético-GO', 'Sport', 'Fortaleza', 'Bahia', 'Vasco', 'Goiás', 'Coritiba', 'Botafogo'
+cont = 0 
 
 ver_tabela = str(input('Quer ver tabela completa [S/N]: ')).strip().upper()[0]
 while ver_tabela not in 'SN':
@@ -17,13 +19,19 @@ if ver_tabela == 'S':
             print(f'\033[33m{colocacao + 1} - {time}\033[m')
         else:
             print(f'\033[31m{colocacao + 1} - {time}\033[m')
+    print('-' * 50)
 
 print(times[:5])
+print('-' * 50)
 print(times[-4:])
+print('-' * 50)
 print(sorted(times))
-print('Chapecoense não está na tabela')
-# if times[chapecoense] != 'Chapecoense':
-#     print('Chapecoense não está na tabela')
-# else:
-#     print(f'Chapecoense está na {chapecoense}ª posição')
+print('-' * 50)
+for palavra in times:    
+    if palavra == 'Chapecoense':
+        cont += 1
 
+if cont == 0:
+    print('Chapecoense não está na tabela!')
+else:
+    print(f'Chapecoense está na {times.index("Chapecoense") + 1}ª posição.')
