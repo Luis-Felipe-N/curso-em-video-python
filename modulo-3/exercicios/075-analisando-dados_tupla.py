@@ -6,25 +6,20 @@
 # !MODIFIQUEI A SINTAXE COM BASE NA RESOLUÇÃO!
 # SIM, PODEMOS FAZER UMA TUPLA COM VARIOS INPUT
 n = (int(input("Digite um número: ")), 
-    int(input("Digite um número: ")), int(input("Digite um número: ")), 
+    int(input("Digite um número: ")),
+    int(input("Digite um número: ")), 
     int(input("Digite um número: ")))
 
-cont9 = cont_par = p3 = 0
-
-for pos, x in enumerate(n):
-    if x == 9:
-        cont9 += 1
-    if x == 3:
-        p3 +=  1
-    if pos >= 1:
-        if x % 2 == 0:
-            cont_par += 1
+cont_par = 0
 
 
 print(f'Você digitou os números: {n}')
-print(f'O 9 apareceu {cont9} vezes')
-if p3 > 0:
-    print(f'O 3 está na posição {n.index(3)}ª posição')
+print(f'O 9 apareceu {n.count(9)} vezes')
+if 3 in n:
+    print(f'O 3 está na posição {n.index(3) + 1}ª posição')
 else:
     print('Você não digite nenhum 3')
+for x in n:
+    if x % 2 == 0:
+           cont_par += 1
 print(f'Valores pares digitados foram {cont_par}')
