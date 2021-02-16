@@ -1,6 +1,4 @@
-valores = list(range(0,10))
-valores.sort(reverse=True)
+nums = [1,50,7,9,10, 6]
 
-print('Os valores ao contrario é : ', end="")
-for v in valores:
-    print(v, end=" ")
+
+print(max(nums[2:]))
