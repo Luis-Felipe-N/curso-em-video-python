@@ -3,7 +3,6 @@
 # NO FINAL MOSTRE OS VALORES EM ORDEM CRESCENTE
 
 nums = []
-
 while True:
     num = int(input('Digite um número: '))
     if num in nums:

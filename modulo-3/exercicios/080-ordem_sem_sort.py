@@ -51,4 +51,6 @@ for n in range(0,5):
         else:
             nums.insert(0, num)
             print('Número aicionado na posição 0...')
+    while n >  0 and n !=:
+
 print(nums)

@@ -7,13 +7,13 @@ valores = list()
 
 for pos, v in enumerate(range(0, 4)):
     valores.append(int(input(f'Digite o número da posição {pos}: ')))
+print('-' * 30)
 print(f'Você digitou os seguintes números: {valores}')
 
 if valores.count(max(valores)) > 1:# SE O NÚMERO DO MAIOR VALOR FOR MAIS QUE 1 
     print(f'O maior número digitado foi {max(valores)} nas posições ', end="")
 else:
     print(f'O maior número digitado foi {max(valores)} na posição ', end="")
-
 for p,n in enumerate(valores):
     if n == max(valores):
         print(f'{p}... ', end=" ")
