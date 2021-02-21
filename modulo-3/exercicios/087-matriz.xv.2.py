@@ -1,33 +1,29 @@
-# FAZER UM SIMULA
+# FAZER UM SIMULA DE MATRIZ QUE SOLICITE VALOR PARA 3 LINHAS E 3 COLUNAS
+# MOSTRE TAMBÉM
+# A SOMA DOS VALORES PARES
+# A SOMA DOS VALORES DA TERCEIRA COLUNA
+# O MAIOR NÚMERO DA SEGUNDA LINHA
 
-matriz = [[], [], []]
-pares = list()
-cont = soma = 0 
+matriz = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+pares = soma_coluna = 0 
 
-for m in range(0, 9):
-    if m < 3:
-        vm = int(input(f'Digite um valor para [0, {cont}]: '))
-        matriz[0].append(vm)
-        cont += 1
-    elif m < 6:
-        vm = int(input(f'Digite um valor para [1, {cont - 3}]: '))
-        matriz[1].append(vm)
-        cont += 1
-    elif m < 9:
-        vm = int(input(f'Digite um valor para [2, {cont - 6}]: '))
-        matriz[2].append(vm)
-        cont += 1
-print('-=' * 30)
-print(f'[ {matriz[0][0]} ] [ {matriz[0][1]} ] [ {matriz[0][2]} ]\n[ {matriz[1][0]} ] [ {matriz[1][1]} ] [ {matriz[1][2]} ]\n[ {matriz[2][0]} ] [ {matriz[2][1]} ] [ {matriz[2][2]} ]')
-print('-=' * 30)
-for v in matriz:
-    for p in v:
-        if p % 2 == 0:
-            pares.append(p)
-print(f'A soma dos valores pares são: {sum(pares)}')
-print(f'A soma dos valores da terceira coluna é ', end="")
+for l in range(0, 3):
+    for c in range(0, 3):
+        matriz[l][c] = int(input(f'Digite um valor para {[l]},{[c]}: '))
+        if matriz[l][c] % 2 == 0:
+            pares += matriz[l][c]
+        if c == 2:
+            soma_coluna += matriz[l][c]
+ 
+print('-' * 30)
+for l in range(0, 3):
+    for c in range(0, 3):
+        if matriz[l][c] % 2 == 0:
+            print(f'\033[32m[{matriz[l][c]:^5}]\033[m', end="")
+        else:
+            print(f'\033[31m[{matriz[l][c]:^5}]\033[m', end="")
+    print()
 
-for c in matriz:
-    soma += c[2]
-print(soma)
-print(f'O maior valor da segunda linha é {max(matriz[1])}')
+print('-' * 30)
+print(f'A soma dos valores pares é {pares}')
+print(f'A soma dos valores da terceira coluna {soma_coluna}')
