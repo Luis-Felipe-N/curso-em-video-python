@@ -35,7 +35,7 @@ while True:
     flag = int(input('Deseja ver nota de qual aluno [999 para parar]: '))
     if flag == 999:
         break
-    elif flag > len(boletim):
+    elif flag >= len(boletim):
         print('Digite um aluno válido: ')
     else:
         print(f'Notas de {boletim[flag][0]} são {boletim[flag][1]}')

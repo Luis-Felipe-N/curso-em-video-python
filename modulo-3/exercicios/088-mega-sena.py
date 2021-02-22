@@ -4,6 +4,12 @@ from time import sleep
 # FAZER UM PROGAMA QUE SIMULE UM GERADDOR DE PALPITES DA TELESENA
 # ONDE O USUÁRIO ESCOLHE QUANTOS PALPITES E OS PALPITES NÃO SE REPITA 
 
+
+print('-=' * 15)
+print('{:^30}'.format('JOGO DA MEGA-SENA'))
+print('-=' * 15)
+
+
 palpites = []
 jogo = []
 
@@ -18,6 +24,10 @@ for v in range(0, quant):
             jogo.append(num)
     palpites.append(jogo[:])
     jogo.clear()
-for e, j in enumerate(palpites):
-    print(f'Jogo {e +1} : {j}')
+
+
+print('-=' * 15)
+for enumeracao, jogos in enumerate(palpites):
+    jogos.sort()
+    print(f'Jogo {enumeracao +1} : {jogos}')
     sleep(1)
