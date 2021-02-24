@@ -3,7 +3,7 @@ from datetime import date
 # Se ele já se alistou, tem que se alistar ou quando vai se alistar.
 
 # Pegando a idade
-ano_nascimento = int(input('Em que ano voçê nasceu: '))
+ano_nascimento = int(input('Em que ano você nasceu: '))
 genero = int(input('qual seu gênero?\n[1] - HOMEN\n[2] - MULHER\nQual seu gênero: '))
 
 # Ano atual
@@ -17,7 +17,7 @@ elif idade < 18:
     print('Você só tem {} anos só pode se alistar {}.'.format(idade, ano + (18 - idade)))
     print('Ainda falta {} anos para voê se alistar.'.format(18 - idade))
 elif idade > 18:
-    print('Voçê tem anos {}.'.format(idade))
+    print('Você tem anos {}.'.format(idade))
     print('Você já de se alisto em {}.'.format(ano - (idade - 18)))
     print('Você deveria se alistar há {} anos atrás.'.format(idade - 18))
 else:

@@ -1,7 +1,9 @@
 # FAZER UM PROGAMA QUE LEIA 5 NÚMEROS E COLOQUE EM ORDEM SEM SOR
 nums = list()
+
 for n in range(0,5):
-    num = int(input('Digite um valor: '))
+    num = int(input('Digite um valor: '))# PEGNADO O VALOR
+    
     if n == 0:
         nums.append(num)
         print('Número aicionado na útima posição...')
@@ -51,6 +53,4 @@ for n in range(0,5):
         else:
             nums.insert(0, num)
             print('Número aicionado na posição 0...')
-    while n >  0 and n !=:
-
 print(nums)
