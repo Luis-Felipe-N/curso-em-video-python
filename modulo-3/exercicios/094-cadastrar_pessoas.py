@@ -5,7 +5,7 @@
 pessoas = []
 dados = {}
 idade = []
-
+ 
 while True:
     print('-' * 30)
     dados['nome'] = str(input('Nome: '))
@@ -13,6 +13,7 @@ while True:
 
     dados['sexo'] = str(input('Sexo [M/F]: ')).strip().lower()[0]
     while dados['sexo'] not in 'mf':
+        print('\033[mERRO! Tente novamente\033[m')
         dados['sexo'] = str(input('Sexo [M/F]: '))
 
     pessoas.append(dados.copy())
@@ -20,6 +21,7 @@ while True:
 
     continuar = str(input('Deseja continuar [S/N]: ')).strip().lower()[0]
     while continuar not in 'sn':
+        print('\033[mERRO! Tente novamente\033[m')
         continuar = str(input('Deseja continuar [S/N]: ')).strip().lower()[0]
 
     if continuar == 'n':
@@ -37,9 +39,6 @@ for pessoa in pessoas:
     for chave, valor in pessoa.items():
         if chave == 'idade':
             idade.append(valor)
-        # if valor == 'f':
-        #     mulher.append(pessoa.copy())
-
 
 print(f'-A média de idade do grupo é {sum(idade) / len(pessoas):.2f}')
 
@@ -62,7 +61,7 @@ print('-' * 30)
 print(f'{"Nome":<10}{"Idade":<10}{"Sexo":<10}')
 print('-' * 30)
 for pessoa in pessoas:
-    if pessoa['idade'] >= 35:
+    if pessoa['idade'] >= sum(idade) / len(pessoas):
         for keys, values in pessoa.items():
             print(f'{values:<10}', end="")
         print()

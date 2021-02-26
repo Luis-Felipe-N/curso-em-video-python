@@ -2,18 +2,18 @@ jogadores = []
 gols_partida = []
 dados_jogador = {}
 
+ 
 while True:
     print('-' * 34)
-    dados_jogador['nome'] = str(input('Nome: '))# PEGANDO O NOME
+    dados_jogador['nome'] = str(input('Nome: ')) # PEGANDO O NOME
     quan_jogos = int(input(f'Quantos partidas {dados_jogador["nome"]} jogou: '))# PEGANDO QUANTIDADE DE PARTIDA JOGADAS
 
     for partida in range(1, quan_jogos + 1):
-        gols_partida.append(int(input(f'Quantos gols {dados_jogador["nome"]} fez na {partida}ª partida: ')))# PEGANDO GOLS MARCADOS
+        gols_partida.append(int(input(f'    Quantos gols {dados_jogador["nome"]} fez na {partida}ª partida: ')))# PEGANDO GOLS MARCADOS
 
     dados_jogador['gols'] = gols_partida.copy()# ADICIONANDO GOLS MARCADOS
     dados_jogador['total'] = sum(gols_partida)# ADICIONANDO TOTAL DE GOLS
     gols_partida.clear()
-
     jogadores.append(dados_jogador.copy())
 
     continuar = str(input('Deseja continuar [S/N]: ')).strip().lower()[0]
@@ -32,10 +32,14 @@ for e, jogador in enumerate(jogadores):
 print('-' * 34)
 while True:
     i = int(input('Qual jogador deseja ver (999 parar):'))
-    print(f'''
-        O nome do jogador é {jogadores["nome"][i]}
-        {jogadores["gols"][i]} fez gols
-        No total foram {jogadores["total"][i]} gols
-        '''
-    )
-
+    print('-' * 34)
+    if i == 999:
+        break
+    elif i >= len(jogadores):
+        print('\033[31mTente um jogador válido\033[m')
+    else:
+        print(f'O nome do jogador é {jogadores[i]["nome"]} e seu levantamento foi:')
+        for e, v in enumerate(jogadores[i]['gols']):
+            print(f'    Na {e + 1}ª partida {jogadores[i]["nome"]} fez {v} gols')
+    print('-' * 34)
+print('Fim do progama!')

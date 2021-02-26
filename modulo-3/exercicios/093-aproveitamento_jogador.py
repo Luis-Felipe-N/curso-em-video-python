@@ -12,8 +12,8 @@ quan_jogos = int(input(f'{dados_jogador["nome"]} jogou qauntas partida: '))
 for partida in range(1, quan_jogos + 1):
     gols_partida.append(int(input(f'Quantos gols o {dados_jogador["nome"]} fez na {partida}ª partida: ')))
     
-dados_jogador['gols'] = gols_partida
-dados_jogador['total'] = sum(gols_partida)
+dados_jogador['gols'] = gols_partida[:]
+dados_jogador['total'] = sum(gols_partida.copy())
 print('*-' * 20)
 
 for chave, valor in dados_jogador.items():
@@ -25,8 +25,7 @@ for chave, valor in dados_jogador.items():
         print(f'O {chave} é {valor}')
 
 print('*-' * 20)
-
 print(f'O jogador {dados_jogador["nome"]} participou de {quan_jogos} jogos.')
 for partidas, gols in enumerate(dados_jogador['gols']):
-    print(f'    =>Na partida{partidas + 1} fez {gols}.')
+    print(f'    =>Na {partidas + 1}ª partida fez {gols}.')
 print(f'Tendo um total de {dados_jogador["total"]} jogos')

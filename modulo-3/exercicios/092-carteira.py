@@ -9,25 +9,19 @@ from datetime import date
 dados_cadastrais = dict()
 ano_atual  = date.today().year
 
-
 print('-' * 50)
 print(f'|{"CADASTRAMENTO DE PESSOAS":^48}|')
 print('-' * 50)
 
-dados_cadastrais['nome'] = str(input('Nome: ')).strip().capitalize()
-
-ano_de_nascimento = int(input('Ano de nascimento: '))
-
-dados_cadastrais['idade'] = ano_atual - ano_de_nascimento
-dados_cadastrais['ctps'] = int(input('Carteira de trabalho (0 não tem)'))
+dados_cadastrais['nome'] = str(input('Nome: ')).strip().capitalize()# PEGANDO O NOME
+ano_de_nascimento = int(input('Ano de nascimento: '))# PEGANDO ANO DE NASIMENTO
+dados_cadastrais['idade'] = ano_atual - ano_de_nascimento# CALCULANDO A IDADE COM REFERENCIA COM O ANO DA MAQUINA
+dados_cadastrais['ctps'] = int(input('Carteira de trabalho (0 não tem): '))# PEGANDO A CARTEIRA DE TRABALHO, SE FOR 0 NÃO EXECULTA OS DE BAIXO
 
 if dados_cadastrais['ctps'] > 0:
-    dados_cadastrais['contratacao'] = int(input('Ano de contratação: '))
+    dados_cadastrais['contratacao'] = int(input('Ano de contratação: '))# PEGANDO ANO DE CONTRATAÇÃO
+    dados_cadastrais['salario'] = float(input('Salário: '))# PEGANDO SALARIO
+    dados_cadastrais['aposentadoria'] = dados_cadastrais['idade'] + ((35 + dados_cadastrais['contratacao']) - ano_atual)# CALCULANDO A APOSENTADORIA
 
-    ano_de_trabalho = ano_atual - dados_cadastrais['contratacao']
-
-    dados_cadastrais['salario'] = float(input('Salário: '))
-    dados_cadastrais['aposentadoria'] = (35 - ano_de_trabalho) + 17
-
-for chave, valor in dados_cadastrais.items():
+for chave, valor in dados_cadastrais.items():# MOSTRANDO RESULTADO
     print(f'{chave} = {valor}')
