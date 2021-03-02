@@ -20,5 +20,8 @@ def notas(*n, sit=False):
     return dict_notas
 
 
+
+
+#progama principal
 resp = notas(1, 7, 5, 10, 10, sit=True)
-help(resp)
+print(resp)

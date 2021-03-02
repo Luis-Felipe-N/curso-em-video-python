@@ -2,21 +2,12 @@
 
 def leiaInt(num=''):
     while True:
-        num = str(input('Digite um número: '))
-        e_num = False
-        for p in num.lower():
-            if p == '':
-                print('\033[31mERRO! TENTE NOVAMENTE!\033[m')
-                break
-            elif p in 'abcdefghijklmnopqrstuvwxyz':
-                print('\033[31mERRO! TENTE NOVAMENTE!\033[m')
-                break
-            else:
-                e_num = True
-
-        if e_num:
-            print(f'Você digitou {num}')
+        num = str(input('Digite um número: ')).strip()
+        if num.isnumeric():
             break
+        else:
+            print('\033[31mDigite um número válido!\033[m')
+    return num
 
-
-leiaInt()
+n = leiaInt()
+print(f'Você digitou o número {n}')

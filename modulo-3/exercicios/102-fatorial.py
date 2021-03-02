@@ -9,19 +9,15 @@ def fatorial(n, show=False):
     return: vai retornar o n fatorado
     """
     f = 1
-    if show:
-        while n != 0:
+    while n != 0:
+        if show:
             if n != 1:
                 print(f'{n} x ', end="")
             if n == 1:
                 print(f'{n} = ', end="")
-            f *= n
-            n -= 1
-    else:
-        while n != 0:
-            f *= n
-            n -= 1
+        f *= n
+        n -= 1
     return f
 
-print('-' * 30)
-help(fatorial)
+
+print(fatorial(70, True))
